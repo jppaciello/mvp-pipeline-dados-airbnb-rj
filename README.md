@@ -1,6 +1,6 @@
 # MVP: Pipeline de Dados na Nuvem — Airbnb Rio de Janeiro
 
-> Trabalho individual — Engenharia de Dados
+> João Pedro Paciello — Engenharia de Dados
 > Plataforma: Databricks Free Edition
 
 ---
