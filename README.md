@@ -8,7 +8,7 @@
 ## Contexto de Negócio e Perguntas (Etapa 2 e 4.1)
 
 **Problema de negócio:**
-Quero entender quais fatores determinam o preço da diária de imóveis Airbnb no Rio de
+Entender quais fatores determinam o preço da diária de imóveis Airbnb no Rio de
 Janeiro e como esse mercado varia ao longo do ano.
 
 **Perguntas de negócio:**
@@ -52,7 +52,7 @@ Script de ingestão: [`01_bronze_ingestao_airbnb_rj.ipynb`](01_bronze_ingestao_a
 
 ## Modelagem e Catálogo de Dados (Etapa 4.3)
 
-Adotamos o **Esquema Estrela**, com grão da tabela fato = um registro por imóvel por mês.
+Foi adotado o **Esquema Estrela**, com grão da tabela fato = um registro por imóvel por mês.
 
 ### Estrutura das tabelas
 
@@ -87,10 +87,6 @@ disponibilidade, status de superhost no mês).
 | `flag_price_outlier` | boolean | TRUE quando price > percentil 99 (R$5.618) | true/false |
 | `host_is_superhost` | boolean | Status de superhost no mês de referência | true/false/null |
 | *(demais colunas)* | — | *(ver código-fonte para lista completa)* | — |
-
-*(Repita esse padrão de tabela para `dim_localizacao`, `dim_imovel`, `dim_host`, `dim_tempo`
-— os textos completos das descrições já estão no notebook `04_gold_modelagem_airbnb_rj.ipynb`,
-seção 7, é só transcrever.)*
 
 ![Catálogo da tabela fato no Unity Catalog](imagens/04_gold_catalogo_fato_diarias.png)
 ![Catálogo da dim_localizacao no Unity Catalog](imagens/04_gold_catalogo_dim_localizacao.png)
@@ -130,7 +126,7 @@ O pipeline segue a **Arquitetura Medalhão**, com um notebook por camada:
 
 ## Qualidade de Dados (Etapa 4.5)
 
-**Metodologia:** avaliamos completude, consistência, unicidade, acurácia e outliers sobre a
+**Metodologia:** avaliado completude, consistência, unicidade, acurácia e outliers sobre a
 camada Bronze, antes de definir as transformações da Silver.
 
 **Principais achados:**
@@ -172,7 +168,7 @@ na cidade.
 
 Vale registrar um processo de refinamento importante: a primeira versão do ranking, ordenada
 por **média**, colocava bairros sem qualquer perfil turístico (Ramos, Padre Miguel, Bangu) no
-topo da lista, com médias de até R$ 3.355. Ao investigar, identificamos que um único anúncio
+topo da lista, com médias de até R$ 3.355. Ao investigar, foi identificado que um único anúncio
 (`sk_imovel = 12871727`, em Bangu) apresentava preço persistente de ~R$ 38.000-39.000 em
 múltiplos meses — um valor implausível para uma diária, mais compatível com erro de cadastro
 do que com imóvel de luxo. Esse é um exemplo concreto de como outliers isolados podem distorcer
@@ -197,7 +193,7 @@ baratos da cidade, fora do top 15.
 O tipo de imóvel e a capacidade de hóspedes mostram um impacto **ainda maior** que a
 localização isoladamente. Para o tipo `Entire home/apt`, o preço médio sobe de forma quase
 monotônica conforme a capacidade aumenta, alcançando picos de R$ 4.454,72 para imóveis com
-capacidade de 14 hóspedes — um salto de proporção muito maior do que a diferença observada
+capacidade de 14 hóspedes, um salto de proporção muito maior do que a diferença observada
 entre o bairro mais caro e mais barato do ranking da Pergunta 1.
 
 Os demais tipos de acomodação (`Private room`, `Shared room`, `Hotel room`) seguem patamares
@@ -274,7 +270,7 @@ em média, **R$ 404,44**, contra **R$ 676,67** dos não-superhosts — ou seja, 
 
 Para descartar a possibilidade de que essa diferença fosse apenas reflexo do tipo de imóvel que
 cada grupo costuma anunciar (ex: superhosts anunciando proporcionalmente mais quartos privados,
-que já são mais baratos por natureza), refizemos a comparação controlando por `room_type`:
+que já são mais baratos por natureza), foi refeito a comparação controlando por `room_type`:
 
 | Tipo de acomodação | Não-superhost | Superhost |
 |---|---|---|
