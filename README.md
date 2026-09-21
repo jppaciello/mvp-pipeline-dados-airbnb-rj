@@ -149,10 +149,10 @@ camada Bronze, antes de definir as transformações da Silver.
   compatível com erro de cadastro (ex: confusão entre aluguel mensal e diária) do que com
   imóvel de luxo genuíno.
 
-![Completude de nulos por coluna](imagens/02_qualidade_completude_nulos.png)
-![Análise de preço (describe)](imagens/02_qualidade_analise_preco_describe.png)
-![Checagem de coordenadas](imagens/02_qualidade_coordenadas_validas.png)
-![Investigação de outliers em bairros](imagens/05_analise_p1_investigacao_outliers.png)
+![Completude de nulos por coluna](imagens/02_Qualidade_Dados/qualidade-dados.png)
+![Análise de preço (describe)](imagens/02_Qualidade_Dados/qualidade-daos2.png)
+![Checagem de coordenadas](imagens/02_Qualidade_Dados/qualidade-dados5.png)
+![Investigação de outliers em bairros](imagens/02_Qualidade_Dados/qualidade-dados3.png)
 
 Script: [`02_qualidade_dados_airbnb_rj.ipynb`](02_qualidade_dados_airbnb_rj.ipynb)
 
@@ -188,8 +188,8 @@ de 2x entre o bairro mais caro do top 15 (Joá) e os últimos colocados dessa me
 (~R$ 400) — e essa diferença certamente seria ainda maior se comparássemos com os bairros mais
 baratos da cidade, fora do top 15.
 
-![Ranking de bairros por mediana](imagens/05_analise_p1_tabela_bairros_mediana.png)
-![Gráfico de bairros](imagens/05_analise_p1_grafico_bairros.png)
+![Ranking de bairros por mediana](imagens/05_Analise/analise1.png)
+![Gráfico de bairros](imagens/05_Analise/analise2.png)
 
 ### 2. O tipo de imóvel e a capacidade influenciam mais que a localização?
 
@@ -210,8 +210,8 @@ de pouco mais de 2x. Isso sugere que, para este dataset, **o tipo de imóvel e a
 pesam mais na formação do preço do que a localização isolada** — embora os dois fatores
 certamente atuem em conjunto na prática.
 
-![Tabela tipo x capacidade](imagens/05_analise_p2_tabela_tipo_capacidade.png)
-![Gráfico tipo x capacidade](imagens/05_analise_p2_grafico_tipo_capacidade.png)
+![Tabela tipo x capacidade](imagens/05_Analise/analise3.png)
+![Gráfico tipo x capacidade](imagens/05_Analise/analise4.png)
 
 ### 3. Existe correlação entre avaliação e preço cobrado?
 
@@ -238,8 +238,8 @@ pode reduzir a proporção de notas máximas mesmo em acomodações objetivament
 de preço — outros fatores (localização, tipo de imóvel) parecem pesar muito mais na formação
 do preço do que a reputação/avaliação em si.
 
-![Tabela por faixa de nota](imagens/05_analise_p3_tabela_faixa_nota.png)
-![Gráfico por faixa de nota](imagens/05_analise_p3_grafico_faixa_nota.png)
+![Tabela por faixa de nota](imagens/05_Analise/analise5.png)
+![Gráfico por faixa de nota](imagens/05_Analise/analise6.png)
 
 ### 4. Os preços variam entre alta e baixa temporada?
 
@@ -263,8 +263,8 @@ tipo de imóvel. O salto observado no início de 2020 deve ser tratado separadam
 evento atípico (pandemia), não como parte do padrão sazonal regular — é uma limitação
 importante da janela de coleta de dados deste dataset, que vale ser destacada.
 
-![Gráfico por estação](imagens/05_analise_p4_grafico_estacao_ano.png)
-![Série mensal completa](imagens/05_analise_p4_grafico_serie_mensal.png)
+![Gráfico por estação](imagens/05_Analise/analise7.png)
+![Gráfico por estação](imagens/05_Analise/analise8.png)
 
 ### 5. Superhosts conseguem cobrar preços acima da média?
 
@@ -294,8 +294,7 @@ consistentemente bom, o que pode ocorrer independentemente do preço cobrado; ou
 que superhosts otimizem para taxa de ocupação (mais reservas, preços mais competitivos) em vez
 de maximizar o valor por diária.
 
-![Tabela superhost geral](imagens/05_analise_p5_tabela_superhost_geral.png)
-![Gráfico superhost por tipo](imagens/05_analise_p5_grafico_superhost_por_tipo.png)
+![Tabela superhost geral](imagens/05_Analise/analise9.png)
 
 ### Discussão geral
 
