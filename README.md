@@ -44,7 +44,7 @@ na fonte original — `maro2019.csv`, `maro2020.csv` (faltando o "ç" de "março
 código de ingestão (ver `01_bronze_ingestao_airbnb_rj.ipynb`), preservando os arquivos
 originais intactos.
 
-![Volume com os 25 arquivos CSV](imagens/01_bronze_volume_arquivos_csv.png)
+![Volume com os 25 arquivos CSV](imagens/01_Bronze/raw-files1.png)(imagens/01_Bronze/raw-files2.png)
 
 Script de ingestão: [`01_bronze_ingestao_airbnb_rj.ipynb`](01_bronze_ingestao_airbnb_rj.ipynb)
 
