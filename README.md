@@ -28,7 +28,7 @@ com dados coletados seguindo a metodologia do Inside Airbnb.
   finalidade, sem restrição legal nem exigência formal de atribuição. Por transparência,
   este trabalho credita a fonte: dataset publicado por `allanbruno` no Kaggle.
 
-![Página do dataset no Kaggle](imagens/01_bronze_kaggle_licenca.png)
+![Página do dataset no Kaggle](imagens/dataset.png)
 
 ---
 
