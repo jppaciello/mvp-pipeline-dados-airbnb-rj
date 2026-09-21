@@ -44,7 +44,8 @@ na fonte original — `maro2019.csv`, `maro2020.csv` (faltando o "ç" de "março
 código de ingestão (ver `01_bronze_ingestao_airbnb_rj.ipynb`), preservando os arquivos
 originais intactos.
 
-![Volume com os 25 arquivos CSV](imagens/01_Bronze/raw-files1.png)(imagens/01_Bronze/raw-files2.png)
+![Volume com os 25 arquivos CSV](imagens/01_Bronze/raw-files1.png)
+![Volume com os 25 arquivos CSV](imagens/01_Bronze/raw-files2.png)
 
 Script de ingestão: [`01_bronze_ingestao_airbnb_rj.ipynb`](01_bronze_ingestao_airbnb_rj.ipynb)
 
@@ -64,7 +65,7 @@ Foi adotado o **Esquema Estrela**, com grão da tabela fato = um registro por im
 | `dim_host` | Dimensão | host (snapshot mais recente) |
 | `dim_tempo` | Dimensão | mês/ano, com estação do ano |
 
-![Schema Gold com as 5 tabelas](imagens/04_gold_catalog_gold_schema.png)
+![Schema Gold com as 5 tabelas](imagens/04_Gold/schema-gold.png)
 
 ### Catálogo de Dados
 
@@ -88,8 +89,9 @@ disponibilidade, status de superhost no mês).
 | `host_is_superhost` | boolean | Status de superhost no mês de referência | true/false/null |
 | *(demais colunas)* | — | *(ver código-fonte para lista completa)* | — |
 
-![Catálogo da tabela fato no Unity Catalog](imagens/04_gold_catalogo_fato_diarias.png)
-![Catálogo da dim_localizacao no Unity Catalog](imagens/04_gold_catalogo_dim_localizacao.png)
+![Catálogo da tabela fato no Unity Catalog](imagens/04_Gold/table-gold.png)
+![Catálogo da tabela fato no Unity Catalog](imagens/04_Gold/table-gold2.png)
+![Catálogo da tabela fato no Unity Catalog](imagens/04_Gold/table-gold3.png)
 
 Script de modelagem: [`04_gold_modelagem_airbnb_rj.ipynb`](04_gold_modelagem_airbnb_rj.ipynb)
 
@@ -116,11 +118,12 @@ O pipeline segue a **Arquitetura Medalhão**, com um notebook por camada:
 - Padronização de `city` (trim + capitalização), corrigindo duplicação de bairros causada
   por variações como "Rio de Janeiro" vs. "Rio de janeiro"
 
-![Execução do notebook Bronze](imagens/01_bronze_execucao_mes_referencia.png)
-![Tabela Bronze persistida](imagens/01_bronze_catalog_listings_bronze.png)
-![Validação da camada Silver](imagens/03_silver_validacao_schema_silver.png)
-![Tabela Silver persistida](imagens/03_silver_catalog_listings_silver.png)
-![Execução das 5 tabelas Gold](imagens/04_gold_execucao_5_tabelas.png)
+![Execução do notebook Bronze](imagens/01_Bronze/ingestao-bronze.png)
+![Execução do notebook Bronze](imagens/01_Bronze/ingestao-bronze2.png)
+![Tabela Bronze persistida](imagens/01_Bronze/listing-bronze.png)
+![Validação da camada Silver](imagens/03_Silver/silver-transformacao.png)
+![Tabela Silver persistida](imagens/03_Silver/listing-silver.png)
+![Execução das 5 tabelas Gold](imagens/04_Gold/camada-gold.png)
 
 ---
 
